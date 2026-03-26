@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin</title>
+
+<style>
+body { font-family: Arial; text-align:center; }
+
+input, select {
+padding:10px;
+margin:10px;
+width:250px;
+}
+
+button {
+padding:10px;
+background:black;
+color:white;
+border:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Admin Panel</h2>
+
+<input id="code" placeholder="Tracking Code"><br>
+<input id="location" placeholder="Location"><br>
+
+<select id="status">
+<option>Shipped</option>
+<option>Transit</option>
+<option>Hold</option>
+</select><br>
+
+<button onclick="save()">Save</button>
+
+<script>
+function save(){
+let code = document.getElementById("code").value;
+let location = document.getElementById("location").value;
+let status = document.getElementById("status").value;
+
+if(code=="" || location==""){
+alert("Fill all fields");
+return;
+}
+
+let data = {
+status: status,
+location: location
+};
+
+localStorage.setItem(code, JSON.stringify(data));
+
+alert("Saved!");
+}
+</script>
+
+</body>
+</html>
