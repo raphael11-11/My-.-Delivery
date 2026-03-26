@@ -6,9 +6,7 @@
 <style>
 body { font-family: Arial; text-align:center; background:#f4f6f9; }
 
-.box {
-margin-top:80px;
-}
+.box { margin-top:80px; }
 
 input, select {
 padding:10px;
@@ -28,6 +26,19 @@ border:none;
 
 <body>
 
+<!-- LOGIN SECTION -->
+<div id="login">
+<h2>🔐 Admin Login</h2>
+
+<input id="user" placeholder="Username"><br>
+<input id="pass" type="password" placeholder="Password"><br>
+
+<button onclick="login()">Login</button>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="panel" style="display:none;">
+
 <h2>🚚 Admin Panel</h2>
 
 <div class="box">
@@ -45,7 +56,24 @@ border:none;
 
 </div>
 
+</div>
+
 <script>
+
+// LOGIN FUNCTION
+function login(){
+let user = document.getElementById("user").value;
+let pass = document.getElementById("pass").value;
+
+if(user==="admin" && pass==="admin123"){
+document.getElementById("login").style.display="none";
+document.getElementById("panel").style.display="block";
+}else{
+alert("Wrong password");
+}
+}
+
+// SAVE DATA
 function save(){
 let code = document.getElementById("code").value;
 let location = document.getElementById("location").value;
