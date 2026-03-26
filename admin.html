@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin</title>
+<title>Admin Panel</title>
 
 <style>
-body { font-family: Arial; text-align:center; }
+body { font-family: Arial; text-align:center; background:#f4f6f9; }
+
+.box {
+margin-top:80px;
+}
 
 input, select {
 padding:10px;
@@ -14,7 +18,7 @@ width:250px;
 
 button {
 padding:10px;
-background:black;
+background:#1f3c68;
 color:white;
 border:none;
 }
@@ -24,7 +28,9 @@ border:none;
 
 <body>
 
-<h2>Admin Panel</h2>
+<h2>🚚 Admin Panel</h2>
+
+<div class="box">
 
 <input id="code" placeholder="Tracking Code"><br>
 <input id="location" placeholder="Location"><br>
@@ -36,6 +42,8 @@ border:none;
 </select><br>
 
 <button onclick="save()">Save</button>
+
+</div>
 
 <script>
 function save(){
@@ -55,7 +63,7 @@ location: location
 
 localStorage.setItem(code, JSON.stringify(data));
 
-alert("Saved!");
+alert("Tracking Saved!");
 }
 </script>
 
